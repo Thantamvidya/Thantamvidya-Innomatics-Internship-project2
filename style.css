@@ -1,0 +1,465 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+
+/* Header Part */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Marquee effect css for slide message */
+.marquee {
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  width: 80%;
+  box-sizing: border-box;
+  animation: slide 5s linear infinite;
+  will-change: transform; /*This will helps to tell that animation will change so button works properly */
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(55%);
+  }
+  to {
+    transform: translateX(-4%);
+  }
+}
+
+.homeButton{
+  padding:5px 10px;
+  font-size: 15px;
+  font-weight:700;
+  background: #4CAF50;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  z-index: 100;
+}
+.homeButton:hover {
+  background: #45a049; 
+  transform: scale(1.05); 
+}
+
+/* Main Section */
+.about-game {
+  margin-top:50px;
+  width:100%;
+  display: flex;
+  flex-direction: row;
+  height:70vh;
+}
+
+#Banner1 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction: column;
+  background-image: url("./Images/About.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+ }
+
+#Banner1 h1 {
+  font-size: 130px;
+  font-family: 'Pacifico', cursive; 
+  background-image: url("./Images/Banner1.jpg");
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  -webkit-text-stroke:2px black; 
+}
+
+#Banner1 p{
+  font-family:cursive;
+  font-size:45px;
+}
+
+.playButton{
+  padding:10px;
+  font-size: 30px;
+  font-weight: bold;
+  background-color: orange;
+  color: #fff;
+  border-radius: 10px;
+  margin-top:20px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.playButton:hover {
+  background-color: darkorange; 
+  transform: scale(1.1); 
+}
+
+
+/* Category Grid Section */
+
+#category{
+font-family: 'Fredoka One', sans-serif;
+font-size: 2.5rem;
+color: #228B22;
+text-align: center;
+text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+padding: 10px 20px;
+background-color: #F4F4F4;
+margin-top:20px;
+}
+.grid-container {
+display: grid;
+grid-template-columns: repeat(5, 1fr);
+gap: 15px;
+justify-content: center;
+margin: 20px auto;
+max-width: 90%;
+}
+
+.grid-item {
+background: linear-gradient(to bottom, #61bc61, #66CDAA);
+padding:10px;
+border-radius: 10px;
+box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+text-align: center;
+border: 3px solid #FFFFFF;
+transition: transform 0.3s;
+}
+.grid-item:hover {
+transform: translateY(-10px); 
+}
+
+.grid-item img {
+width: 100%;
+height: 70%;
+max-width: 200px;
+border-radius: 10px;
+}
+
+.grid-item p {
+font-size:20px;
+margin: 10px 0;
+font-weight: bold;
+}
+
+.grid-play {
+background-color: #4CAF50;
+color: white;
+border:2px solid white;
+padding: 8px 15px;
+font-size: 19px;
+font-weight: bold;
+cursor: pointer;
+border-radius: 5px;
+}
+
+.grid-play:hover {
+background-color: #388E3C;
+border: none;
+}
+
+
+
+/* Memory Game Box CSS */
+#gameBox{
+display:flex;
+margin-top:50px;
+height: 100vh;
+background: linear-gradient(135deg,pink ,rgb(97, 18, 97), darkblue);
+flex-direction: column;
+justify-content: start;
+align-items: center;
+}
+
+#head{
+padding:10px;
+display: flex;
+flex-direction:row;
+justify-content:space-between;
+align-items: center;
+gap:40px;
+}
+
+#startButton{
+padding:10px;
+font-size:20px;
+font-weight: bold;
+background-color: #333;
+border-radius: 10px;
+background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+}
+.timer,#score  {
+font-size: 20px;
+font-weight: bold;
+margin: 5px 0;
+color: #282c34;
+background-color: #ffd700; 
+padding: 5px;
+border-radius: 12px;
+}
+
+#time-left{
+color:red;
+font-size:30px;
+}
+
+#game-board{
+padding: 10px;
+display:grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 15px;
+justify-content:start;
+background: linear-gradient(135deg, darkblue, rgb(97, 18, 97), pink);
+margin: 10px auto;
+max-width:800px;
+}
+
+.card {
+width: 100px;
+height: 100px;
+background:black;
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 24px;
+cursor: pointer;
+border-radius: 8px;
+
+position: relative;
+transition: transform 0.6s ease;
+}
+
+.card img {
+background-color: white;
+width: 100%;
+height: 100%;
+display: none;
+}
+.card.flipped {
+transform: rotateY(180deg); /* Flip the card */
+}
+.flipped img {
+display: block;
+}
+
+/* When Card Matches It Becomes Transparent Green */
+/* .card.matched {
+background-color: green; 
+border: 2px solid darkgreen; 
+pointer-events: none; 
+}
+
+.card.matched img {
+opacity: 0.5;
+} */
+
+/* Add animation to matched cards */
+.card.matched {
+animation: disappear 0.5s forwards; 
+
+}
+@keyframes disappear {
+0% {
+  opacity: 1;
+  transform: scale(1); 
+}
+50% {
+  opacity: 0.5;
+  transform: scale(0.8); 
+}
+100% {
+  opacity: 0;
+  transform: scale(0); 
+}
+} 
+
+
+
+/* Popup Styling */
+.popup {
+position:fixed;
+top:50%;
+left:50%;
+z-index: 1000;
+transform: translate(-50%, -50%) scale(0);
+animation: popIn 0.8s ease-out forwards;
+}
+@keyframes popIn {
+0% {
+  transform: translate(-50%, -50%) scale(0); 
+  opacity: 0;
+}
+50% {
+  transform: translate(-50%, -50%) scale(1.1); 
+  opacity: 1;
+}
+100% {
+  transform: translate(-50%, -50%) scale(1); 
+}
+}
+.popup-content {
+background: #fff;
+padding:10px;
+border-radius: 10px;
+text-align: center;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+width:100%;
+max-width: 350px;
+}
+#popupImage{
+width:60%;
+}
+.popup-content h2 {
+margin: 0 0 10px;
+}
+
+.popup-content p {
+margin: 0 0 10px;
+font-size:20px;
+color: red;
+}
+
+.popup-content button {
+background: #007BFF;
+color: white;
+padding: 10px 10px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+font-size:20px;
+}
+
+.popup-content button:hover {
+background: #0056b3;
+}
+
+
+/* Footer Section */
+#game-footer {
+background-color: #282c34;
+color: #fff;
+text-align: center;
+padding:5px;
+font-size: 16px;
+width: 100%;
+}
+
+#game-footer p {
+margin: 5px 0;
+}
+
+/* Media Queries For Smaller Devices */
+
+@media (max-width:1100px){
+  .marquee{
+    display: none;
+  }
+  .about-game {
+    width: 100%;
+    height:50vh;
+  }
+  #Banner1{
+      overflow-x: hidden;
+  }
+
+  #Banner1 h1 {
+    padding-top: 20px;
+    font-size:100px;
+  }
+  #Banner1 p{
+      font-size:35px;
+      font-weight: bold;
+  } 
+  .playButton{
+    padding:10px;
+    font-size:30px;
+   }
+  .grid-container{
+    overflow-x: hidden;
+  } 
+  .game-container {
+    gap:8px;
+  }
+  
+  .card {
+    width:150px;
+    height:150px;
+  }
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+ .grid-item img {
+    width: 100%;
+    height: 60%;
+    max-width: 200px;
+    border-radius: 10px;
+  }
+  .popup-content {
+    width:80vw;
+  }
+  #game-footer {
+    font-size:12px;
+  }
+}
+@media (max-width:600px){
+  .about-game {
+    width: 100%;
+    height:35vh;
+  }
+  #Banner1 h1 {
+    padding-top: 20px;
+    font-size:50px;
+  }
+  #Banner1 p{
+    font-size:20px;
+    font-weight:bold;
+ } 
+ .playButton{
+  padding:5px;
+  font-size:25px;
+ }
+ .grid-container {
+  grid-template-columns: repeat(2, 1fr);
+}
+.game-container {
+  max-width:350px;
+  gap:7px;
+}
+.card {
+  width:73px;
+  height:73px;
+}
+.popup-content {
+  width:80vw;
+}
+#game-footer {
+  font-size:12px;
+}
+  #Banner1 p{
+      font-size:21px;
+      font-weight:bold;
+  } 
+  .playButton{
+  padding:5px;
+  font-size:25px;
+}
+}
