@@ -4,8 +4,6 @@
   box-sizing: border-box;
   font-family: Arial, sans-serif;
 }
-
-
 /* Header Part */
 header {
   position: fixed;
@@ -19,12 +17,10 @@ header {
   padding: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
 .logo {
   font-size: 1.2rem;
   font-weight: bold;
 }
-
 /* Marquee effect css for slide message */
 .marquee {
   white-space: nowrap;
@@ -35,7 +31,6 @@ header {
   animation: slide 5s linear infinite;
   will-change: transform; /*This will helps to tell that animation will change so button works properly */
 }
-
 @keyframes slide {
   from {
     transform: translateX(55%);
@@ -44,7 +39,6 @@ header {
     transform: translateX(-4%);
   }
 }
-
 .homeButton{
   padding:5px 10px;
   font-size: 15px;
@@ -68,7 +62,6 @@ header {
   flex-direction: row;
   height:70vh;
 }
-
 #Banner1 {
   width: 100%;
   height: 100%;
@@ -81,7 +74,6 @@ header {
   background-position: center;
   background-size: cover;
  }
-
 #Banner1 h1 {
   font-size: 130px;
   font-family: 'Pacifico', cursive; 
@@ -91,12 +83,10 @@ header {
   text-align: center;
   -webkit-text-stroke:2px black; 
 }
-
 #Banner1 p{
   font-family:cursive;
   font-size:45px;
 }
-
 .playButton{
   padding:10px;
   font-size: 30px;
@@ -111,10 +101,7 @@ header {
   background-color: darkorange; 
   transform: scale(1.1); 
 }
-
-
 /* Category Grid Section */
-
 #category{
 font-family: 'Fredoka One', sans-serif;
 font-size: 2.5rem;
@@ -133,7 +120,6 @@ justify-content: center;
 margin: 20px auto;
 max-width: 90%;
 }
-
 .grid-item {
 background: linear-gradient(to bottom, #61bc61, #66CDAA);
 padding:10px;
@@ -146,20 +132,17 @@ transition: transform 0.3s;
 .grid-item:hover {
 transform: translateY(-10px); 
 }
-
 .grid-item img {
 width: 100%;
 height: 70%;
 max-width: 200px;
 border-radius: 10px;
 }
-
 .grid-item p {
 font-size:20px;
 margin: 10px 0;
 font-weight: bold;
 }
-
 .grid-play {
 background-color: #4CAF50;
 color: white;
@@ -170,14 +153,10 @@ font-weight: bold;
 cursor: pointer;
 border-radius: 5px;
 }
-
 .grid-play:hover {
 background-color: #388E3C;
 border: none;
 }
-
-
-
 /* Memory Game Box CSS */
 #gameBox{
 display:flex;
@@ -188,7 +167,6 @@ flex-direction: column;
 justify-content: start;
 align-items: center;
 }
-
 #head{
 padding:10px;
 display: flex;
@@ -197,7 +175,6 @@ justify-content:space-between;
 align-items: center;
 gap:40px;
 }
-
 #startButton{
 padding:10px;
 font-size:20px;
@@ -215,12 +192,10 @@ background-color: #ffd700;
 padding: 5px;
 border-radius: 12px;
 }
-
 #time-left{
 color:red;
 font-size:30px;
 }
-
 #game-board{
 padding: 10px;
 display:grid;
@@ -231,7 +206,6 @@ background: linear-gradient(135deg, darkblue, rgb(97, 18, 97), pink);
 margin: 10px auto;
 max-width:800px;
 }
-
 .card {
 width: 100px;
 height: 100px;
@@ -242,11 +216,9 @@ align-items: center;
 font-size: 24px;
 cursor: pointer;
 border-radius: 8px;
-
 position: relative;
 transition: transform 0.6s ease;
 }
-
 .card img {
 background-color: white;
 width: 100%;
@@ -259,22 +231,18 @@ transform: rotateY(180deg); /* Flip the card */
 .flipped img {
 display: block;
 }
-
 /* When Card Matches It Becomes Transparent Green */
 /* .card.matched {
 background-color: green; 
 border: 2px solid darkgreen; 
 pointer-events: none; 
 }
-
 .card.matched img {
 opacity: 0.5;
 } */
-
 /* Add animation to matched cards */
 .card.matched {
 animation: disappear 0.5s forwards; 
-
 }
 @keyframes disappear {
 0% {
@@ -290,9 +258,6 @@ animation: disappear 0.5s forwards;
   transform: scale(0); 
 }
 } 
-
-
-
 /* Popup Styling */
 .popup {
 position:fixed;
@@ -330,13 +295,11 @@ width:60%;
 .popup-content h2 {
 margin: 0 0 10px;
 }
-
 .popup-content p {
 margin: 0 0 10px;
 font-size:20px;
 color: red;
 }
-
 .popup-content button {
 background: #007BFF;
 color: white;
@@ -346,12 +309,9 @@ border-radius: 5px;
 cursor: pointer;
 font-size:20px;
 }
-
 .popup-content button:hover {
 background: #0056b3;
 }
-
-
 /* Footer Section */
 #game-footer {
 background-color: #282c34;
@@ -361,13 +321,10 @@ padding:5px;
 font-size: 16px;
 width: 100%;
 }
-
 #game-footer p {
 margin: 5px 0;
 }
-
 /* Media Queries For Smaller Devices */
-
 @media (max-width:1100px){
   .marquee{
     display: none;
@@ -379,7 +336,6 @@ margin: 5px 0;
   #Banner1{
       overflow-x: hidden;
   }
-
   #Banner1 h1 {
     padding-top: 20px;
     font-size:100px;
@@ -398,15 +354,13 @@ margin: 5px 0;
   .game-container {
     gap:8px;
   }
-  
   .card {
     width:150px;
     height:150px;
   }
   .grid-container {
     grid-template-columns: repeat(3, 1fr);
-  }
-  
+  } 
  .grid-item img {
     width: 100%;
     height: 60%;
