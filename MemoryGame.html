@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Match Game</title>
+    <link rel="stylesheet" href="./MemoryGameStyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  
+
+   <!-- Landing Page -->
+    <!-- NavBar -->
+   <header>
+    <div class="logo">MindTap</div>
+    <div class="marquee">Welcome to the Memory Match Game! Challenge yourself and have fun!</div>
+    <!-- <marquee class="marquee">Welcome to the Memory Match Game! Challenge yourself and have fun!</marquee> -->
+    <button class="homeButton" onclick="showHome()">Home</button>
+  </header>
+
+  <!-- Banner Section -->
+  <section class="about-game" id="about-game">
+    <div id="Banner1">
+        <h1>Memory Game</h1>
+        <p>Test your concentration and enjoy!</p>
+        <button class="playButton" onclick="showGrid()">Start</button>
+    </div>
+  </section>
+
+
+  <!-- Grid Section -->
+  <section id="category-section">
+    <h1 id="category">Categories</h1>
+  <section class="grid-container" id="category-selection">
+    <div class="grid-item" onclick="navigateToGame('fruits')">
+      <img src="./Images/Fruits.png" alt="Fruits">
+      <p>Fruits</p>
+      <button class="grid-play" >Play</button>
+    </div>
+    <div class="grid-item" onclick="navigateToGame('emojis')">
+      <img src="./Images/Emoji.png" alt="Emojis">
+      <p>Emojis</p>
+      <button class="grid-play">Play</button>
+    </div>
+    <div class="grid-item" onclick="navigateToGame('animals')">
+      <img src="./Images/Animals.png" alt="Animals">
+      <p>Animals</p>
+      <button class="grid-play">Play</button>
+    </div>
+    <div class="grid-item" onclick="navigateToGame('planets')">
+      <img src="./Images/Planets.png" alt="Planets">
+      <p>Planets</p>
+      <button class="grid-play">Play</button>
+    </div>
+    <div class="grid-item" onclick="navigateToGame('flags')">
+      <img src="./Images/Flags.png" alt="Flags">
+      <p>Flags</p>
+      <button class="grid-play">Play</button>
+    </div>
+    <div class="grid-item" onclick="navigateToGame('landMarks')">
+      <img src="./Images/Marks.png" alt="Landmarks">
+      <p>Landmarks</p>
+      <button class="grid-play">Play</button>
+    </div>
+    <div class="grid-item" onclick="navigateToGame('vegetables')">
+      <img src="./Images/Vegetables.png" alt="Vegetables">
+      <p>Vegetables</p>
+      <button class="grid-play">Play</button>
+    </div>
+    <div class="grid-item" onclick="navigateToGame('shapes')">
+      <img src="./Images/Shapes.png" alt="Shapes">
+      <p>Shapes</p>
+      <button class="grid-play">Play</button>
+    </div>
+    <div class="grid-item" onclick="navigateToGame('pokemons')">
+      <img src="./Images/Poke.png" alt="Pokemons">
+      <p>Pokemons</p>
+      <button class="grid-play">Play</button>
+    </div>
+    <div class="grid-item" onclick="navigateToGame('cartoons')">
+      <img src="./Images/Cartoons.png" alt="Cartoons">
+      <p>Cartoons</p>
+      <button class="grid-play">Play</button>
+    </div>
+    <div class="grid-item" onclick="navigateToGame('foods')">
+      <img src="./Images/Foods.png" alt="Foods">
+      <p>Foods</p>
+      <button class="grid-play">Play</button>
+    </div>
+    <div class="grid-item" onclick="navigateToGame('harry')">
+      <img src="./Images/Harry.png" alt="Harry Potter">
+      <p>Harry Potter</p>
+      <button class="grid-play">Play</button>
+    </div>
+    <div class="grid-item" onclick="navigateToGame('flowers')">
+      <img src="./Images/Flower.png" alt="Flowers">
+      <p>Flowers</p>
+      <button class="grid-play">Play</button>
+    </div>
+    <div class="grid-item" onclick="navigateToGame('memes')">
+      <img src="./Images/Meme.png" alt="Memes">
+      <p>Memes</p>
+      <button class="grid-play">Play</button>
+    </div>
+    <div class="grid-item" onclick="navigateToGame('sweets')">
+      <img src="./Images/Dessert.png" alt="Sweets">
+      <p>Sweets</p>
+      <button class="grid-play">Play</button>
+    </div>
+  </section>
+</section>
+
+ 
+  <!-- Footer Section -->
+<footer id="game-footer">
+  <p>2025  All Rights Reserved. Created by Thantam vidya. </p>
+</footer>
+
+  <script src="./GameOperations.js"></script>
+</body>
+</html>
