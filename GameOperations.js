@@ -16,7 +16,6 @@ const categories = {
     memes: ["./Images/Meme1.jpeg", "./Images/Meme2.jpeg", "./Images/Meme3.jpeg", "./Images/Meme4.jpeg", "./Images/Meme5.png", "./Images/Meme6.png", "./Images/Meme7.jpeg", "./Images/Meme8.jpeg"],
     sweets: ["./Images/Dessert1.jpeg", "./Images/Dessert2.jpeg", "./Images/Dessert3.jpeg", "./Images/Dessert4.jpeg", "./Images/Dessert5.jpeg", "./Images/Dessert6.jpeg", "./Images/Dessert7.jpeg", "./Images/Dessert8.jpeg"],
 };
-
 let firstCard, secondCard;
 let lockBoard = false;
 let timeLeft = 30;
@@ -25,22 +24,18 @@ let score = 0;
 let cards = [];
 let gameActive = false;
 let currentSound = null;
-
 // Sounds Path
 const flipSound = new Audio('./Sounds/Flip.wav');
 const matchSound = new Audio('./Sounds/Match.wav');
 const unmatchSound = new Audio('./Sounds/Wrong.wav');
-
 // On Click of start button on banner it takes to categories section
 function showGrid() {
     document.getElementById("category-selection").scrollIntoView({ behavior: "smooth" });
 }
-
 function navigateToGame(category) {
-    window.location.href = `./Game.html?category=${category}`;
+    window.location.href = `./index.html?category=${category}`;
 }
-
-// Get the category from the URL when Game.html loads
+// Get the category from the URL when index.html loads
 document.addEventListener("DOMContentLoaded", () => {
     const urlParams = new URLSearchParams(window.location.search);
     const category = urlParams.get("category");  
@@ -51,13 +46,10 @@ document.addEventListener("DOMContentLoaded", () => {
         console.error("No category found in the URL!");
     }
 });
-
-
 // Game Starts
 function startGame(category) {
     cards = [...categories[category], ...categories[category]];
     createBoard();
-
     // Enable the start button
     const startButton = document.getElementById("startButton");
     startButton.disabled = false;
@@ -67,7 +59,6 @@ function startGame(category) {
         startButton.disabled = true;
     });
 }
-
 //  Randomly rearrange the elements of an array
 function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -75,7 +66,6 @@ function shuffle(array) {
         [array[i], array[j]] = [array[j], array[i]];
     }
 }
-
 // generating the game board by creating card in that
 function createBoard() {
     shuffle(cards);
@@ -90,7 +80,6 @@ function createBoard() {
         board.appendChild(card);
     });
 }
-
 // flipping card
 function flipCard() {
     if (!gameActive || lockBoard || this === firstCard) return;
@@ -98,7 +87,6 @@ function flipCard() {
     // Play the flip sound effect
     flipSound.currentTime = 0; 
     flipSound.play();
-
     this.classList.add("flipped");
     if (!firstCard) {
         firstCard = this;
@@ -109,14 +97,12 @@ function flipCard() {
     checkMatch();
     saveGameState();
 }
-
 // Checking matched or not 
 function checkMatch() {
     let isMatch = firstCard.dataset.image === secondCard.dataset.image;
     if (isMatch) {
         matchSound.currentTime = 0; 
         matchSound.play(); 
-        
         // Add a class to give style for matched cards
         firstCard.classList.add("matched");
         secondCard.classList.add("matched");
@@ -131,14 +117,12 @@ function checkMatch() {
     }
     checkWin();
 }
-
 // disable of cards when they matched so unable to click on it
 function disableCards() {
     firstCard.removeEventListener("click", flipCard);
     secondCard.removeEventListener("click", flipCard);
     resetBoard();
 }
-
 // when the two selected cards do not match then unflip them
 function unflipCards() {
     setTimeout(() => {
@@ -147,13 +131,10 @@ function unflipCards() {
         resetBoard();
     }, 1000);
 }
-
 // Reseting the game after each round
 function resetBoard() {
     [firstCard, secondCard, lockBoard] = [null, null, false];
 }
-
-
 // For the countdown of game
 function startTimer() {
     if (timer) clearInterval(timer); // Clear the previous timer, if any
@@ -162,8 +143,7 @@ function startTimer() {
     if (typeof timeLeft === "undefined" || timeLeft === null) {
         timeLeft = 30; // Default 
     }
-
-    document.getElementById("time-left").innerText = timeLeft;
+ document.getElementById("time-left").innerText = timeLeft;
 
     timer = setInterval(() => {
         if (timeLeft > 0) {
@@ -177,7 +157,6 @@ function startTimer() {
         }
     }, 1000);
 }
-
 // Checking all pairs matched 
 function checkWin() {
     if (document.querySelectorAll(".flipped").length === cards.length) {
@@ -186,37 +165,27 @@ function checkWin() {
         setTimeout(() => showEndGamePopup(true), 500); // Game won
     }
 }
-
 // Showing the message of win or lose
 function showEndGamePopup(isWin) {
     const popup = document.getElementById("endGamePopup");
     const message = isWin ? "Congratulations! You won!" : "Time's up! You lost.";
     const scoreMessage = `Your final score is : ${score}`;
-
     document.getElementById("popupMessage").innerText = message;
     document.getElementById("popupScore").innerText = scoreMessage;
-
-
     // Image in popup box 
     const image = document.getElementById("popupImage");
     image.src = isWin ? "./Images/WinPop.gif" : "./Images/Lose.gif"; 
     image.alt = isWin ? "Winning Sticker" : "Losing Sticker";
-
     if (currentSound) {
         currentSound.pause();
         currentSound.currentTime = 0;
     }
-
     currentSound = isWin ? new Audio('./Sounds/Win.wav') : new Audio('./Sounds/Game Lose.wav');
     currentSound.play();
-
     popup.style.display = "block";
-    
      // Clear saved game state from local storage
      localStorage.removeItem("memoryGameState");
 }
-
-
 // After clicking close button in popup
 function closePopup() {
     const popup = document.getElementById("endGamePopup");
@@ -235,7 +204,6 @@ function closePopup() {
     timeLeft = 30; 
     document.getElementById("time-left").innerText = timeLeft;
     gameActive = false;
-
     // Restart the game with the same category
     const selectedCategory = Object.keys(categories).find(category =>
         categories[category].some(image => cards.includes(image))
@@ -245,10 +213,6 @@ function closePopup() {
         startGame(selectedCategory); 
     }
 }
-
-
-
-
 // Saving on localstorage and then retrieving it
 function saveGameState() {
     const gameState = {
@@ -260,17 +224,14 @@ function saveGameState() {
     };
     localStorage.setItem('memoryGameState', JSON.stringify(gameState));
 }
-
 // Load the saved game state from localStorage
 function loadGameState() {
     const savedState = JSON.parse(localStorage.getItem("memoryGameState"));
     if (!savedState) return;
-
     // Restore game state
     cards = savedState.cards;
     timeLeft = savedState.timeLeft;
     score = savedState.score;
-
     // Rebuild the game board
     const board = document.getElementById("game-board");
     board.innerHTML = ""; // Clear the board
@@ -278,8 +239,7 @@ function loadGameState() {
         const card = document.createElement("div");
         card.classList.add("card");
         card.dataset.image = image;
-
-        // Restore flipped and matched states
+    // Restore flipped and matched states
         if (savedState.flippedCards.includes(image)) {
             card.classList.add("flipped");
         }
@@ -295,9 +255,6 @@ function loadGameState() {
     startTimer();
     gameActive = true;
 }
-
-
-
 // Run on page loads
 document.addEventListener("DOMContentLoaded", () => {
     const gameState = localStorage.getItem("memoryGameState");
@@ -317,7 +274,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (selectedCategory) {
                     localStorage.setItem("resuming", "true"); // Set the flag to prevent duplicate prompts
                     localStorage.setItem("redirecting", "true");
-                    window.location.href = `./Game.html?category=${selectedCategory}`;
+                    window.location.href = `./index.html?category=${selectedCategory}`;
                 } else {
                     console.error("Category for saved game not found.");
                 }
@@ -327,7 +284,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
     } else if (currentPage.includes("Game.html")) {
-        // Logic for Game.html
+        // Logic for index.html
         if (localStorage.getItem("resuming")) {
             localStorage.removeItem("resuming");
             loadGameState(); 
