@@ -37,10 +37,10 @@ function showGrid() {
 }
 
 function navigateToGame(category) {
-    window.location.href = `./index.html?category=${category}`;
+    window.location.href = `./Game.html?category=${category}`;
 }
 
-// Get the category from the URL when index.html loads
+// Get the category from the URL when Game.html loads
 document.addEventListener("DOMContentLoaded", () => {
     const urlParams = new URLSearchParams(window.location.search);
     const category = urlParams.get("category");  
@@ -317,7 +317,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (selectedCategory) {
                     localStorage.setItem("resuming", "true"); // Set the flag to prevent duplicate prompts
                     localStorage.setItem("redirecting", "true");
-                    window.location.href = `./index.html?category=${selectedCategory}`;
+                    window.location.href = `./Game.html?category=${selectedCategory}`;
                 } else {
                     console.error("Category for saved game not found.");
                 }
@@ -326,8 +326,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 stopGame();
             }
         }
-    } else if (currentPage.includes("index.html")) {
-        // Logic for index.html
+    } else if (currentPage.includes("Game.html")) {
+        // Logic for Game.html
         if (localStorage.getItem("resuming")) {
             localStorage.removeItem("resuming");
             loadGameState(); 
