@@ -7,7 +7,7 @@ const categories = {
     flags: ["./Images/Flag1.jpg", "./Images/Flag2.jpg", "./Images/Flag3.jpeg", "./Images/Flag4.jpeg", "./Images/Flag5.png", "./Images/Flag6.jpg", "./Images/Flag7.png", "./Images/Flag8.jpeg"],
     landMarks: ["./Images/Mark1.jpeg", "./Images/Mark2.jpg", "./Images/Mark3.jpeg", "./Images/Mark4.jpeg", "./Images/Mark5.jpeg", "./Images/Mark6.jpeg", "./Images/Mark7.jpeg", "./Images/Mark8.jpg"],
     shapes: ["./Images/Shape1.png", "./Images/Shape2.jpeg", "./Images/Shape3.png", "./Images/Shape4.jpeg", "./Images/Shape5.jpeg", "./Images/Shape6.jpeg", "./Images/Shape7.png", "./Images/Shape8.jpg"],
-    vegetables: ["./Images/veg1.jpeg", "./Images/veg2.jpeg", "./Images/veg3.jpeg", "./Images/veg4.jpeg", "./Images/veg5.jpeg", "./Images/veg6.jpeg", "./Images/veg7.jpeg", "./Images/veg8.jpeg"],
+    vegetables: ["./Images/Veg1.jpeg", "./Images/Veg2.jpeg", "./Images/Veg3.jpeg", "./Images/Veg4.jpeg", "./Images/Veg5.jpeg", "./Images/Veg6.jpeg", "./Images/Veg7.jpeg", "./Images/Veg8.jpeg"],
     pokemons: ["./Images/Poke1.jpeg", "./Images/Poke2.png", "./Images/Poke3.jpg", "./Images/Poke4.jpg", "./Images/Poke5.png", "./Images/Poke6.png", "./Images/Poke7.jpg", "./Images/Poke8.jpeg"],
     cartoons: ["./Images/Cartoon1.png", "./Images/Cartoon2.jpeg", "./Images/Cartoon3.jpeg", "./Images/Cartoon4.jpeg", "./Images/Cartoon5.jpeg", "./Images/Cartoon6.jpeg", "./Images/Cartoon7.png", "./Images/Cartoon8.jpeg"],
     foods: ["./Images/Food1.jpeg", "./Images/Food2.jpeg", "./Images/Food3.jpeg", "./Images/Food4.jpeg", "./Images/Food5.jpeg", "./Images/Food6.jpeg", "./Images/Food7.jpeg", "./Images/Food8.jpeg"],
